@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Final Project</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="/">FOOTBALL WEBSITE</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link" href="/">Home</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/about">About us</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/about/team_photo">Team Photo</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="/video">Video</a>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+    	<br>
+
+  
+<div class="container-fluid bg-light">
+  <div class="container pt-4">
+    <br>
+   <center><img src="img\logo.png" width="5%"><center> <h1> Footbal game </h1>
+
+    <form action="/get_winner" method="post" accept-charset="utf-8">
+      <div class="form-group row">
+        <div class="row">
+          <div class="col-6">
+            <label class="label" for="team1area">Input Team1 names</label>
+            <textarea required class="form-control" name="team1area"><%=team1%></textarea>          
+          </div>  
+          <div class="col-2">
+            <label for="">Input Team1 goals</label>
+            <input required="required" class="form-control" placeholder="<%=goal1%>" type="number" name="team1goal">
+          </div>
+          <div class="col-6">
+        <div class="row">
+          </div>
+            <label class="label" for="team2area">Input Team2 names</label>
+            <textarea required class="form-control" name="team2area"><%=team2%></textarea>
+          </div>  
+          <div class="col-2">
+            <label for="">Input Team2 goals</label>
+            <input required="required" class="form-control" placeholder="<%=goal2%>" type="number" name="team2goal">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div>
+            <button type="sumbit" class="btn btn-success col-8">Get winner</button> 
+          </div>
+        </div>
+      </div>
+    </form>
+    <br>
+    <%if(winner!='none') { %>
+    <div  class="alert-success rounded p-4 col-8">
+        <p>
+          Team 1 combinations:
+          <%=results[0]%>
+        </p>
+        <p>
+          Team 2 combinations:
+          <%=results[1]%>
+        </p>
+        <h1>Winner is: <%=winner%></h1>
+    </div>  
+    <% } %>
+
+  <%if(error!=""){%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> <%=error%>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <%}%>
+
+  </div>
+</div>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<br>
+</body>	
+<footer>
+
+		<div id="contacts" class="section num2">
+			<br><center><img src="img/aitu.png" width="20%" height="10%"></center>
+			<h3 class="display-4"><center>Our Contacts </center></h3>
+			<br>
+
+			<div class="container" style="font-size: 30px; color: white; text-align: center">
+				<div class="row">
+					<div class="col-sm">
+						Location
+						<br>
+						<h3 style="font-size: 25px; color: black">
+							Astana IT University
+							<br><br>
+							Turkistan Street, Nur-Sultan 020000
+						</h3>
+						<br>
+
+						</small>
+
+					</div>
+					<div class="col-sm">
+						Email
+						<br>
+						<h3 style="font-size: 25px; color: black"> aitulibrary@gmail.com</h3>
+						<br>
+						</small>
+					</div>
+					<div class="col-sm">
+						Phone number
+						<br>
+						<h3 style="font-size: 25px; color: black"> +7 (777) 123-45-45 </h3>
+						<br>
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+</html>
